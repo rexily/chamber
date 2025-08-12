@@ -1,17 +1,24 @@
-
-:root {
+html, body, #root {
+  background: #ffffff !important; // Белый фон всегда
+  color: #213547;
+  color-scheme: light only;       // Только светлая тема
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #FCE3C4;
+}
+
+:root {
+  --background-color: #ffffff;
+  --text-color: #213547;
+}
+
+/* Глобальный box-sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 a {
@@ -21,14 +28,6 @@ a {
 }
 a:hover {
   color: #535bf2;
-}
-
-body {
-  //margin: 0;
-  //display: flex;
-  //place-items: center;
-  //min-width: 320px;
-  //min-height: 100vh;
 }
 
 h1 {
@@ -43,7 +42,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #efeeff; /* Светлая кнопка */
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -55,15 +54,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #efeeff;
-  }
-}
+//#root {
+//  max-width: none;
+//  padding: 0;
+//}

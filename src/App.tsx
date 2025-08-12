@@ -10,7 +10,7 @@ const App = () => {
   const [bulletPositions, setBulletPositions] = useState<number[]>([]);
   const [triggerPosition, setTriggerPosition] = useState(1);
   const [result, setResult] = useState(false);
-  const [isBulletsVisible, setBulletsVisible] = useState(false);
+  // const [isBulletsVisible, setBulletsVisible] = useState(false);
   const [hydrated, setHydrated] = useState(false); // wait for client-side
 
 
@@ -86,11 +86,9 @@ const App = () => {
 
   const pullTrigger = () => {
     if (bulletPositions.includes(triggerPosition)) {
-      // shotSound2?.play();
       new Audio(shotSound3).play();
       setResult(true);
     } else {
-      // missSound2?.play();
       new Audio(missSound3).play();
       setTriggerPosition(triggerPosition === chamberSize ? 1 : triggerPosition + 1);
     }
@@ -124,7 +122,9 @@ const App = () => {
       <div
           style={pageStyle}
       >
-        <h1 style={{fontSize: '35px', margin: 0}} onDoubleClick={() => setBulletsVisible(prev => !prev)}>Русская Рулетка</h1>
+        <h1 style={{fontSize: '35px', margin: 0}}
+            // onDoubleClick={() => setBulletsVisible(prev => !prev)}
+        >Русская Рулетка</h1>
 
         {result && <p style={{ color: 'red', fontSize: '35px', fontWeight: '800', margin: '10px' }}>ТЫ ПРОИГРАЛ</p>}
 
@@ -168,31 +168,30 @@ const App = () => {
           </button>
         </div>
 
+        {/*{isBulletsVisible && (*/}
+        {/*    <div style={{*/}
+        {/*      display: 'flex',*/}
+        {/*      justifyContent: 'center',*/}
+        {/*      marginTop: '20px',*/}
+        {/*      flexWrap: 'wrap'*/}
+        {/*    }}>*/}
+        {/*      {[...Array(chamberSize)].map((_, index) => (*/}
+        {/*          <div*/}
+        {/*              key={index}*/}
+        {/*              style={{*/}
+        {/*                width: '50px',*/}
+        {/*                height: '50px',*/}
+        {/*                borderRadius: '50%',*/}
+        {/*                margin: '5px',*/}
+        {/*                backgroundColor: bulletPositions.includes(index + 1) ? 'red' : 'gray',*/}
+        {/*                outline: triggerPosition === index + 1 ? '3px solid black' : 'none',*/}
+        {/*              }}*/}
+        {/*          />*/}
+        {/*      ))}*/}
+        {/*    </div>*/}
+        {/*)}*/}
 
 
-
-        {isBulletsVisible && (
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              marginTop: '20px',
-              flexWrap: 'wrap'
-            }}>
-              {[...Array(chamberSize)].map((_, index) => (
-                  <div
-                      key={index}
-                      style={{
-                        width: '50px',
-                        height: '50px',
-                        borderRadius: '50%',
-                        margin: '5px',
-                        backgroundColor: bulletPositions.includes(index + 1) ? 'red' : 'gray',
-                        outline: triggerPosition === index + 1 ? '3px solid black' : 'none',
-                      }}
-                  />
-              ))}
-            </div>
-        )}
       </div>
   );
 };
