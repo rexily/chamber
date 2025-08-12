@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/chamber/static/css/main.591e570d.css",
+    "main.js": "/chamber/static/js/main.9f862790.js",
+    "static/media/chamber.wav": "/chamber/static/media/chamber.12fc2065e43c68436d0e.wav",
+    "static/media/shot.wav": "/chamber/static/media/shot.6f3227635d86be75895e.wav",
+    "static/media/misfire.wav": "/chamber/static/media/misfire.0c7fb26961fb87177145.wav",
+    "index.html": "/chamber/index.html",
+    "main.591e570d.css.map": "/chamber/static/css/main.591e570d.css.map",
+    "main.9f862790.js.map": "/chamber/static/js/main.9f862790.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.591e570d.css",
+    "static/js/main.9f862790.js"
+  ]
+}
